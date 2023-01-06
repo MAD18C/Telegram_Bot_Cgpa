@@ -25,7 +25,7 @@ def pincode_step(message):
     bot.send_message(message.chat.id, "Estimated Waiting Time: 50 secs")
    
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False, slow_mo=50)
+        browser = p.chromium.launch(headless=True, slow_mo=50)
         page = browser.new_page()
         page.goto("http://exams.veltech.edu.in/studentlogin/stulogin.aspx")
         page.fill('input#txtUserName', pin)
